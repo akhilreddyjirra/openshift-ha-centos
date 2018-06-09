@@ -23,7 +23,7 @@ echo "******"
 
 # install updates
 yum install -y update
-
+sysctl -w vm.max_map_count=262144
 # install the following base packages
 yum install -y  wget git zile nano net-tools docker-1.13.1\
 				bind-utils iptables-services \
