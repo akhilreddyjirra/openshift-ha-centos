@@ -26,7 +26,7 @@ $ export DISK="/dev/sda"
 3. Run the automagic installation script as root:
 
 ```
-curl https://raw.githubusercontent.com/gshipley/installcentos/master/install-openshift.sh | /bin/bash
+curl https://raw.githubusercontent.com/akhilreddyjirra/openshift-ha-centos/master/install-openshift.sh | /bin/bash
 ```
 
 ## Development
@@ -35,6 +35,6 @@ For development it's possible to switch the script repo
 
 ```
 # Change location of source repository
-$ export SCRIPT_REPO="https://raw.githubusercontent.com/gshipley/installcentos/master"
+$ export SCRIPT_REPO="https://raw.githubusercontent.com/akhilreddyjirra/openshift-ha-centos/master"
 $ curl $SCRIPT_REPO/install-openshift.sh | /bin/bash
 ```
