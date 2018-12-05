@@ -8,7 +8,7 @@ export PASSWORD=${PASSWORD:=password}
 export VERSION=${VERSION:="v3.9.0"}
 
 
-export SCRIPT_REPO=${SCRIPT_REPO:="https://raw.githubusercontent.com/gshipley/installcentos/master"}
+export SCRIPT_REPO=${SCRIPT_REPO:="https://raw.githubusercontent.com/akhilreddyjirra/openshift-ha-centos/master"}
 
 export IP=${IP:="$(ip route get 8.8.8.8 | awk '{print $NF; exit}')"}
 export API_PORT=${API_PORT:="8443"}
