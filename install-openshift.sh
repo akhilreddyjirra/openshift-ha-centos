@@ -2,7 +2,7 @@
 
 ## see: https://youtu.be/aqXSbDZggK4
 
-export DOMAIN=${DOMAIN:="$(curl ipinfo.io/ip).nip.io"}
+export DOMAIN=${DOMAIN:="$(ip route get 8.8.8.8 | awk '{print $NF; exit}').nip.io"}
 export USERNAME=${USERNAME:="$(whoami)"}
 export PASSWORD=${PASSWORD:=password}
 export VERSION=${VERSION:="v3.9.0"}
@@ -112,6 +112,9 @@ if [ ! -z "${HTTPS_PROXY:-${https_proxy:-${HTTP_PROXY:-${http_proxy}}}}" ]; then
 	fi
 	echo "openshift_no_proxy=\"${__no_proxy}\"" >> inventory.ini
 fi
+
+mkdir -p /etc/origin/master/
+touch /etc/origin/master/htpasswd
 
 ansible-playbook -i inventory.ini openshift-ansible/playbooks/prerequisites.yml
 ansible-playbook -i inventory.ini openshift-ansible/playbooks/deploy_cluster.yml
